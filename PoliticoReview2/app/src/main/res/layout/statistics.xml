@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="삭제"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/politicoState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/politicoCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="용산구"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/localProportional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지역구 국회의원"
+                android:layout_gravity="center"
+                android:padding="3dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/politicoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="진  영"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/politicoParty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="더불어민주당"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/numberOfVotesSinglePoliticoReceived"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="투표인원"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+<!-- 하나의 통계 결과, 예전 강의 목록 부분이랑 흡사 -->
