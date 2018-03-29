@@ -55,41 +55,57 @@
 
     <string-array name="politico_rank">
         <item>전체에서</item>
-        <item>남자 선호도</item>
-        <item>여자 선호도</item>
+        <item>남자사용자 선호도</item>
+        <item>여자사용자 선호도</item>
+        <item>10대 선호도</item>
+        <item>20대 선호도</item>
+        <item>30대 선호도</item>
+        <item>40대 선호도</item>
+        <item>50대 선호도</item>
+        <item>60대 선호도</item>
+        <item>70대이상 선호도</item>
     </string-array>
 
-    <string-array name="scores">
-        <item>0</item>
-        <item>0.5</item>
-        <item>1</item>
-        <item>1.5</item>
-        <item>2</item>
-        <item>2.5</item>
-        <item>3</item>
-        <item>3.5</item>
-        <item>4</item>
-        <item>4.5</item>
-        <item>5</item>
-        <item>5.5</item>
-        <item>6</item>
-        <item>6.5</item>
-        <item>7</item>
-        <item>7.5</item>
-        <item>8</item>
-        <item>8.5</item>
-        <item>9</item>
-        <item>9.5</item>
-        <item>10</item>
+    <string-array name="electionNumber">
+        <item>초선</item>
+        <item>재선</item>
+        <item>3선</item>
+        <item>4선</item>
+        <item>5선</item>
+        <item>6선</item>
+        <item>7선</item>
+        <item>8선</item>
+    </string-array>
+
+    <string-array name="committee">
+        <item>국회운영위원회</item>
+        <item>법제사법위원회</item>
+        <item>정무위원회</item>
+        <item>기획재정위원회</item>
+        <item>과학기술정보방송통신위원회</item>
+        <item>교육문화체육관광위원회</item>
+        <item>외교통일위원회</item>
+        <item>국방위원회</item>
+        <item>행정안전위원회</item>
+        <item>농림축산식품해양수산위원회</item>
+        <item>산업통상자원중소벤처기업위원회</item>
+        <item>보건복지위원회</item>
+        <item>환경노동위원회</item>
+        <item>국토교통위원회</item>
+        <item>정보위원회</item>
+        <item>여성가족위원회</item>
+        <item>예산결산특별위원회</item>
+        <item>윤리특별위원회</item>
     </string-array>
 
     <string-array name="parties">
         <item>더불어민주당</item>
         <item>자유한국당</item>
-        <item>국민의당</item>
-        <item>바른정당</item>
+        <item>바른미래당</item>
+        <item>민주평화당</item>
         <item>정의당</item>
         <item>대한애국당</item>
+        <item>민중당</item>
         <item>무소속</item>
     </string-array>
 
@@ -250,8 +266,8 @@
         <item>중구</item>
         <item>남구 갑</item>
         <item>남구 을</item>
-        <item>동구 갑</item>
-        <item>북구 을</item>
+        <item>동구</item>
+        <item>북구</item>
         <item>울주군</item>
     </string-array>
 

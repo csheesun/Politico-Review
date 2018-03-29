@@ -85,13 +85,19 @@ public class PoliticoFragment extends Fragment {
     private Spinner stateSpinner;
     private ArrayAdapter cityAdapter;
     private Spinner citySpinner;
+    /*
+    private ArrayAdapter electionNumberAdapter;
+    private Spinner electionNumberSpinner;
+    private ArrayAdapter committeeAdapter;
+    private Spinner committeeSpinner;   //이름검색 ?
 
-    private String localProportional="";  //학부인지 대학원 인지 들어감 - 이거 뭔지 모르겠음
+    private EditText nameSpinner;
+    */
+    private String localProportional="";
 
-    private ListView politicoListView;  //11강 추가
-    private PoliticoListAdapter adapter;
+    private ListView politicoListView; //11강 추가
+    private PoliticoListAdapter adapter; //
     private List<Politico> politicoList;
-
 
     @Override  //액티비티 만들었을 때 처리
     public void onActivityCreated(Bundle b) {
@@ -101,6 +107,19 @@ public class PoliticoFragment extends Fragment {
         partySpinner = (Spinner) getView().findViewById(R.id.partySpinner);
         stateSpinner = (Spinner) getView().findViewById(R.id.stateSpinner);
         citySpinner = (Spinner) getView().findViewById(R.id.citySpinner);
+        /*electionNumberSpinner = (Spinner) getView().findViewById(R.id.electionNumberSpinner);
+        committeeSpinner = (Spinner) getView().findViewById(R.id.committeeSpinner);
+
+        nameSpinner = (EditText) getView().findViewById(R.id.nameSpinner);
+
+        //선수(비례/지역과 무관)
+        electionNumberAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.electionNumber, android.R.layout.simple_spinner_dropdown_item);  //초기화, year 부분과 매칭
+        electionNumberSpinner.setAdapter(electionNumberAdapter);
+        electionNumberSpinner.setSelection(0);
+        //상임위원회(비례/지역과 무관)
+        committeeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.committee, android.R.layout.simple_spinner_dropdown_item);  //초기화, year 부분과 매칭
+        committeeSpinner.setAdapter(committeeAdapter);
+        committeeSpinner.setSelection(0);*/
 
         localProportionalGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -129,70 +148,87 @@ public class PoliticoFragment extends Fragment {
                 if(stateSpinner.getSelectedItem().equals("서울특별시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_seoul, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("부산광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_busan, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("대구광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_daegu, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("인천광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_incheon, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("광주광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_gwangju, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("대전광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_daejeon, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("울산광역시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_ulsan, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("세종특별자치시")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_sejong, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("경기도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_gyeonggi, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("강원도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_gangwon, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("충청북도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_chungbuk, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("충청남도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_chungnam, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("전라북도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_jeonbuk, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("전라남도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_jeonnam, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("경상북도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_gyungbuk, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("경상남도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_gyungnam, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
                 else if(stateSpinner.getSelectedItem().equals("제주특별자치도")){
                     cityAdapter= ArrayAdapter.createFromResource(getActivity(), R.array.cities_jeju, android.R.layout.simple_spinner_dropdown_item);
                     citySpinner.setAdapter(cityAdapter);
+                    citySpinner.setSelection(0);
                 }
             }
 
@@ -215,9 +251,8 @@ public class PoliticoFragment extends Fragment {
                     new BackgroundTaskForProportionals().execute(); //전체에서 인기 강의 순위 가져옴
                 }else if(localProportional.equals("지역구 국회의원")) {
                     politicoList.clear();
-                    new BackgroundTaskForLocals().execute();  //모든 강의정보를 가져올 수 있도록
+                    new BackgroundTaskForLocals().execute();
                 }
-
             }
         });
     }
@@ -311,6 +346,8 @@ public class PoliticoFragment extends Fragment {
                 String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
@@ -321,9 +358,11 @@ public class PoliticoFragment extends Fragment {
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
 //첫번째 생성자 씀 - 여기 딱 하나임 - 수정 마지막 만든 생성자를 쓰게 됨
-                    Politico politico = new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty);  //정치인 (사실은 공약이다!) 하나를 객체로
+                    Politico politico = new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber);  //정치인 (사실은 공약이다!) 하나를 객체로
                     politicoList.add(politico);
                     //noticeListView.setAdapter(adapter); //=> 안됨
                     //adapter.notifyDataSetChanged();  //이거 해야 보인다.- 기존에는 여기 있었음
@@ -398,6 +437,8 @@ public class PoliticoFragment extends Fragment {
                 //String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
@@ -408,9 +449,12 @@ public class PoliticoFragment extends Fragment {
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");  //아예 받아온게 없는 것 같다.
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
-//첫번째 생성자 씀 - 여기 딱 하나임 - 수정 마지막 만든 생성자를 쓰게 됨
-                    Politico politico = new Politico(politicoID, localProportional, politicoName, politicoParty);  //for 비례대표
+
+                    //첫번째 생성자 씀 - 여기 딱 하나임 - 수정 마지막 만든 생성자를 쓰게 됨
+                    Politico politico = new Politico(politicoID, localProportional, politicoName, politicoParty, politicoElectionNumber);  //for 비례대표
                     politicoList.add(politico);
                     //noticeListView.setAdapter(adapter); //=> 안됨
                     //adapter.notifyDataSetChanged();  //이거 해야 보인다.- 기존에는 여기 있었음

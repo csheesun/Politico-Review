@@ -126,25 +126,41 @@ public class StatisticsFragment extends Fragment {
                     rankList.clear();
                     new PopularityByEntire().execute(); //전체에서 인기 강의 순위 가져옴
                 }
-                else if(rankSpinner.getSelectedItem().equals("남자 선호도")){
+                else if(rankSpinner.getSelectedItem().equals("남자사용자 선호도")){
                     rankList.clear();
                     new PopularityByMale().execute();
                 }
-                else if(rankSpinner.getSelectedItem().equals("여자 선호도")){
+                else if(rankSpinner.getSelectedItem().equals("여자사용자 선호도")){
                     rankList.clear();
                     new PopularityByFemale().execute(); //전체에서 인기 강의 순위 가져옴
                 }
-                else if(rankSpinner.getSelectedItem().equals("10대까지의 선호도")){  //여기부터 해야 함
+                else if(rankSpinner.getSelectedItem().equals("10대 선호도")){  //여기부터 해야 함
                     rankList.clear();
                     new PopularityByTeens().execute();
                 }
-                else if(rankSpinner.getSelectedItem().equals("전공 인기도")){
+                else if(rankSpinner.getSelectedItem().equals("20대 선호도")){
                     rankList.clear();
-                    //new PopularityByMajor().execute();
+                    new PopularityByTwenties().execute();
                 }
-                else if(rankSpinner.getSelectedItem().equals("교양 인기도")){
+                else if(rankSpinner.getSelectedItem().equals("30대 선호도")){
                     rankList.clear();
-                    //new PopularityByRefinement().execute();
+                    new PopularityByThirties().execute();
+                }
+                else if(rankSpinner.getSelectedItem().equals("40대 선호도")){
+                    rankList.clear();
+                    new PopularityByFourties().execute();
+                }
+                else if(rankSpinner.getSelectedItem().equals("50대 선호도")){
+                    rankList.clear();
+                    new PopularityByFifties().execute();
+                }
+                else if(rankSpinner.getSelectedItem().equals("60대 선호도")){
+                    rankList.clear();
+                    new PopularityBySixties().execute();
+                }
+                else if(rankSpinner.getSelectedItem().equals("70대이상 선호도")){
+                    rankList.clear();
+                    new PopularityBySeventiesAndOver().execute();
                 }
             }
             @Override
@@ -206,18 +222,22 @@ public class StatisticsFragment extends Fragment {
                 String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
                     JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
-                    politicoID = object.getInt("politicoID");
+                    politicoID = object.getInt("politicoID"); //여기는 이렇게 해도 괜찮다.
                     politicoState = object.getString("politicoState");
                     politicoCity = object.getString("politicoCity");
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
-                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
                     count++;
                 }
                 rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
@@ -279,18 +299,22 @@ public class StatisticsFragment extends Fragment {
                 String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
                     JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
-                    politicoID = object.getInt("politicoID");
+                    politicoID = 0; //object.getInt("politicoID") =>바꿔도 같음...
                     politicoState = object.getString("politicoState");
                     politicoCity = object.getString("politicoCity");
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
-                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
                     count++;
                 }
                 rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
@@ -352,18 +376,22 @@ public class StatisticsFragment extends Fragment {
                 String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
                     JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
-                    politicoID = object.getInt("politicoID");
+                    politicoID = 0; //object.getInt("politicoID") =>바꿔도 같음...
                     politicoState = object.getString("politicoState");
                     politicoCity = object.getString("politicoCity");
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
-                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
                     count++;
                 }
                 rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
@@ -425,18 +453,22 @@ public class StatisticsFragment extends Fragment {
                 String politicoCity;
                 String politicoName;  //받고 싶은 정보들 다
                 String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
 
                 while(count < jsonArray.length())
                 {
                     JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
-                    politicoID = object.getInt("politicoID");
+                    politicoID = 0; //object.getInt("politicoID") =>바꿔도 같음...
                     politicoState = object.getString("politicoState");
                     politicoCity = object.getString("politicoCity");
                     localProportional = object.getString("localProportional");
                     politicoName = object.getString("politicoName");
                     politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
 
-                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
                     count++;
                 }
                 rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
@@ -446,6 +478,468 @@ public class StatisticsFragment extends Fragment {
         }
     }
 
+    class PopularityByTwenties extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityByTwenties.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class PopularityByThirties extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityByThirties.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class PopularityByFourties extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityByFourties.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    class PopularityByFifties extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityByFifties.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class PopularityBySixties extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityBySixties.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class PopularityBySeventiesAndOver extends AsyncTask<Void, Void, String> { //21강에서 복사해서 추가  - 신규 추가
+        String target; // 접속한 홈페이지 주소 들어감
+
+        @Override
+        protected void onPreExecute(){
+            try {                                                                            //여기 수정
+                target = "http://politicoreview.dothome.co.kr/PopularityBySeventiesAndOver.php";  //아까전에 저장한 아이디를 유티에프로 인코딩 - php 파일이랑 매칭
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids){
+            try{  //실질적으로 데이터 가져오는 부분
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream(); //받아온거 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); //인풋 스트림에 있는 내용을 버퍼에 저장해서 읽을 수 있도록
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder(); //temp 에 하나씩 읽어와서 문자열 형태로 저장하도록
+                while((temp = bufferedReader.readLine()) != null) {  //버퍼에서 받아온 값을 한줄씩 읽으면서 temp에 넣는다.
+                    stringBuilder.append(temp +"\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim(); //다들어간 문자열이 반환 된다.
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values) {
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){  //결과 처리 - course 에서 생성자 만들고 돌아와서 수정
+            try {  //응답 부분 처리 - php 로 질의해서 얻은 거 출력하기
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("response"); //배열 받아오기 - response 에 각각의 공지사항 담기게 됨
+                int count = 0;
+
+                int politicoID;  //Politico 안에 있는 변수임
+                String localProportional;
+                String politicoState;
+                String politicoCity;
+                String politicoName;  //받고 싶은 정보들 다
+                String politicoParty;
+                String politicoElectionNumber;
+                //String politicoHomepage;
+
+                while(count < jsonArray.length())
+                {
+                    JSONObject object = jsonArray.getJSONObject(count);  //배열이 원소값 저장 가능 - //받아온거 변수에 저장 쿼리해서 받아온거 저장
+                    politicoID = 0; //object.getInt("politicoID");
+                    politicoState = object.getString("politicoState");
+                    politicoCity = object.getString("politicoCity");
+                    localProportional = object.getString("localProportional");
+                    politicoName = object.getString("politicoName");
+                    politicoParty = object.getString("politicoParty");
+                    politicoElectionNumber = object.getString("politicoElectionNumber");
+                    //politicoHomepage = object.getString("politicoHomepage");
+
+                    rankList.add(new Politico(politicoID, localProportional, politicoState, politicoCity, politicoName, politicoParty, politicoElectionNumber));  //생성자에 추가 - 하나의 강의 추가 - 해당 인스턴스에 전달!
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();//adapter 갱신 해 줄수 있도록  //없어도 됨 - credit = (TextView) getView().findViewById(R.id.totalCredit);  //초기화
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 /*
     //만들어 본적 있었음 , ScheduleFragment 에서 복사해옴 18강임 => 스케줄 때문에 하는거, 스케줄 안하므로, 불필요함

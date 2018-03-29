@@ -8,13 +8,13 @@
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="60dp"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="삭제"
         android:background="@color/colorPrimary"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="25dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="5dp"/>
     
@@ -46,16 +46,6 @@
                 android:padding="3dp"
                 android:textColor="#ffffff"
                 android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/localProportional"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="지역구 국회의원"
-                android:layout_gravity="center"
-                android:padding="3dp"/>
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -82,6 +72,23 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="@color/colorPrimaryDark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/localProportional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지역구 국회의원"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#000000"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,9 +102,10 @@
                     android:text="투표인원"
                     android:layout_gravity="center"
                     android:padding="3dp"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="#ff00ff"/>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
 <!-- 하나의 통계 결과, 예전 강의 목록 부분이랑 흡사 -->

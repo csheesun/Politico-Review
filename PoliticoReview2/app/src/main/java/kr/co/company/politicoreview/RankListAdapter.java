@@ -53,6 +53,8 @@ public class RankListAdapter extends BaseAdapter {
         TextView localProportional = (TextView)v.findViewById(R.id.localProportional);
         TextView politicoName = (TextView)v.findViewById(R.id.politicoName); //여기도 바꿔야 - 실제 보여줄 것만, course 안에 있는 것들
         TextView politicoParty = (TextView)v.findViewById(R.id.politicoParty);
+        TextView politicoElectionNumber = (TextView)v.findViewById(R.id.electionNumber); //여기도 바꿔야 - 실제 보여줄 것만, course 안에 있는 것들
+        //TextView politicoHomepage = (TextView)v.findViewById(R.id.politicoHomepage);
 
         rankTextView.setText((i + 1) + "위"); //21강
         if(i == 0) //21강 - 1위 면
@@ -64,12 +66,13 @@ public class RankListAdapter extends BaseAdapter {
             rankTextView.setBackgroundColor(parent.getResources().getColor(R.color.colorPrimary)); //1위~3위가 아니면 다 이 배경색임
         }
 
-        politicoState.setText(politicoList.get(i).getPoliticoState()+"");
+        politicoState.setText(politicoList.get(i).getPoliticoState());
         politicoCity.setText(politicoList.get(i).getPoliticoCity());
-
-        localProportional.setText(politicoList.get(i).getLocalProportional()+"");
-        politicoName.setText(politicoList.get(i).getPoliticoName()+"");
-        politicoParty.setText(politicoList.get(i).getPoliticoParty()+"");
+        localProportional.setText(politicoList.get(i).getLocalProportional());
+        politicoName.setText(politicoList.get(i).getPoliticoName());
+        politicoParty.setText(politicoList.get(i).getPoliticoParty());
+        politicoElectionNumber.setText(politicoList.get(i).getPoliticoElectionNumber()); //추가
+        //politicoHomepage.setText(politicoList.get(i).getPoliticoHomepage());
 
         v.setTag(politicoList.get(i).getPoliticoID());
         return v;

@@ -12,10 +12,29 @@ public class Politico {
     String politicoParty;
     String politicoState;
     String politicoCity;
-
+    String politicoElectionNumber;
+    String politicoHomepage;
     int numberOfVotesSinglePoliticoReceived; //구 :  courseRival; //18강 추가 특정 정치인에 투표한 사용자 수 - 강의 경쟁자 수
 
-    String policyTitle;  //공약위해 두 개 추가
+    public String getPoliticoElectionNumber() {
+        return politicoElectionNumber;
+    }
+
+    public void setPoliticoElectionNumber(String politicoElectionNumber) {
+        this.politicoElectionNumber = politicoElectionNumber;
+    }
+
+    public String getPoliticoHomepage() {
+        return politicoHomepage;
+    }
+
+    public void setPoliticoHomepage(String politicoHomepage) {
+        this.politicoHomepage = politicoHomepage;
+    }
+
+
+
+    /*String policyTitle;  //공약위해 두 개 추가
     String policyContent;
 
     public String getPolicyTitle() {
@@ -32,7 +51,7 @@ public class Politico {
 
     public void setPolicyContent(String policyContent) {
         this.policyContent = policyContent;
-    }
+    }*/
 
     public int getPoliticoID() {
         return politicoID;
@@ -90,13 +109,15 @@ public class Politico {
         this.numberOfVotesSinglePoliticoReceived = numberOfVotesSinglePoliticoReceived;
     }
 
-    public Politico(int politicoID, String localProportional, String politicoState, String politicoCity, String politicoName, String politicoParty) {  //원래 있던거
+    public Politico(int politicoID, String localProportional, String politicoState, String politicoCity, String politicoName, String politicoParty, String politicoElectionNumber) {  //원래 있던거
         this.politicoID = politicoID;  //제일 처음에 있던거 for PoliticoFragment, 정치인추가때 씀
         this.politicoState = politicoState;
         this.politicoCity = politicoCity;
         this.localProportional = localProportional;
         this.politicoName = politicoName;
         this.politicoParty = politicoParty;
+        this.politicoElectionNumber = politicoElectionNumber;  //추가
+        //this.politicoHomepage = politicoHomepage; //추가
     }
 
     public Politico(int politicoID, String politicoState, String politicoCity, String localProportional, String politicoName, String politicoParty, int numberOfVotesSinglePoliticoReceived) {
@@ -114,11 +135,13 @@ public class Politico {
 
     // for RankListAdapter - 21강에서 추가 - 첫번째 생성자랑 완전 같아서 따로 안만듦
 
-    //politicoFragment 에서 비례대표 위해 또 만듦
-    public Politico(int politicoID, String localProportional, String politicoName, String politicoParty) {  //원래 있던거
+    //politicoFragment 에서 비례대표 위해 또 만듦 -
+    public Politico(int politicoID, String localProportional, String politicoName, String politicoParty, String politicoElectionNumber) {  //원래 있던거
         this.politicoID = politicoID;  //제일 처음에 있던거 for PoliticoFragment, 정치인추가때 씀
         this.localProportional = localProportional;
         this.politicoName = politicoName;
         this.politicoParty = politicoParty;
+        this.politicoElectionNumber = politicoElectionNumber;  //추가
+        //this.politicoHomepage = politicoHomepage; //추가
     }
 }
