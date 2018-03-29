@@ -6,12 +6,14 @@ mysqli_set_charset($con, "utf8");
 	$localProportional = $_GET["localProportional"];
 	$politicoParty = $_GET["politicoParty"];
 
-	$result = mysqli_query($con, "SELECT POLITICO.politicoID, POLITICO.localProportional, POLITICO.politicoParty, POLITICO.politicoName FROM POLITICO WHERE localProportional = '$localProportional' AND politicoParty 
+	$result = mysqli_query($con, "SELECT * FROM POLITICO WHERE localProportional = '$localProportional' AND politicoParty 
  = '$politicoParty'");
 
 	$response = array();
 	while($row = mysqli_fetch_array($result)) {
-		array_push($response, array("politicoID"=>$row[0],  "localProportional"=>$row[1],"politicoName"=>$row[3], "politicoParty"=>$row[2]));
+		array_push($response, array("politicoID"=>$row[0], 
+ "politicoName"=>$row[1], "politicoParty"=>$row[3],  
+"localProportional"=>$row[5],"politicoElectionNumber"=>$row[6]));
 	}
 
 	echo json_encode(array("response"=>$response), JSON_UNESCAPED_UNICODE);

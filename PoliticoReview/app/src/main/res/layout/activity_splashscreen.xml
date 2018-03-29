@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:layout_gravity="center"
+    android:id="@+id/lin_lay"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/splash"
+        android:background="@drawable/splash_img"/>
+</LinearLayout>
+
+<!--//출처 : https://www.youtube.com/watch?v=weK5a-8x628&index=24&list=PLRx0vPvlEmdD862e43ADbvDeGPUZKDuqL-->

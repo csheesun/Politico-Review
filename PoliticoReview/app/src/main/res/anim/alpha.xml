@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="0.0"
+    android:toAlpha="1.0"
+    android:duration="3000"/>
+
+
+<!--//출처 : https://www.youtube.com/watch?v=weK5a-8x628&index=24&list=PLRx0vPvlEmdD862e43ADbvDeGPUZKDuqL-->

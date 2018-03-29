@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B1CA93</color>
+    <color name="colorPrimaryDark">#008080</color>
+    <color name="colorAccent">#2E508D</color>
+    <color name="colorWarning">#ED00CB</color>
+    <color name="colorGray">#8C8C8C</color>
+
+    <color name="colorDanger">#8324FF</color>
+    <color name="colorRed">#FF1212</color>
+    <color name="colorSafe">#08C904</color>
+    <color name="colorBackground">#C3ECC7</color>
+
+    <color name="colorWinner">#FFD700</color>
+    <color name="colorRunnerUp">#C0C0C0</color>
+    <color name="colorThird">#cd7f32</color>
+</resources>
+<!--밑에 세개는 17강에서 - 경쟁률 관련 DANGER 아주 위험, RED : 조금 위험
+colorBackground는 25강에서 추가, 강의목록 배경용 -->
+
+
