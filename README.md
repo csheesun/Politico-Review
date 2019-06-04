@@ -1,7 +1,8 @@
-**Politico Review has not been updated since May 2018 *** 
+<h1>**Politico Review has not been updated since May 2018 **</h1>
 
-PoliticoReview(생활정치)
-현직 국회의원의 인기도 조사를 위한 모바일애플리케이션 입니다. PoliticoReview aims at south korean legislator's popularity survey.
+<h1>PoliticoReview(생활정치)</h1>
+현직 국회의원의 인기도 조사를 위한 모바일애플리케이션 입니다.<br>
+PoliticoReview aims at south korean legislator's popularity survey.
 
 다운로드 관련 안내 About DownLoad
 ** 'Code'의 'Branch:master' 에서는
