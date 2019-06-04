@@ -1,4 +1,4 @@
-<h1>PoliticoReview<h1>
+<h1>PoliticoReview</h1>
 <p>PoliticoReview aims at south korean legislator's popularity survey.</p>
   
 <h2>Politico Review has not been updated since May 2018</h2>
@@ -26,7 +26,7 @@ This app was developed based on YouTube lecture series called 'Android Studio Re
 https://www.youtube.com/watch?v=gd49JeLYvUI&index=28&list=PLRx0vPvlEmdD862e43ADbvDeGPUZKDuqL
 </p>
 
-<h1>PoliticoReview<h1>
+<h1>PoliticoReview</h1>
 <p>Politico Review는 현직 국회의원의 인기도 조사를 위한 모바일애플리케이션 입니다.</p>
 <h2>Politico Review는 2018년 5월을 끝으로 더 이상 유지보수 하지 않습니다.</h2>
   
