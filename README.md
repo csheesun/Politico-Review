@@ -12,17 +12,17 @@
 <p>In Gooplay Store, search '생활정치' or PoliticoReview.</p>
 
 <h2>Functions</h2>
-<p>Search south korean legislators(Regional/Proportional Representatives) and vote
-See legislators a user voted for
-See the number of votes a legislator obtained
+<p>Search south korean legislators(Regional/Proportional Representatives) and vote<br>
+See legislators a user voted for<br>
+See the number of votes a legislator obtained<br>
 See overall, gender, age group rankings</p>
 
 <h2>Note</h2>
-<p>In addition, I already recognize that first, whenever a user moves between menus, searching legislators should be done again, second, whenever a user moves between menus, duplicate vote for one legislator is permitted. third, even though a legislator is absent on certain region, voting is permitted.</p>
+<p>I already recognize that first, whenever a user moves between menus, searching legislators should be done again, second, whenever a user moves between menus, duplicate vote for one legislator is permitted. third, even though a legislator is absent on certain region, voting is permitted.</p>
 
 <h2>Acknowledgement</h2> 
 <p>
-This app was developed based on YouTube lecture series called 'Android Studio Registration Helper Application' produced by Dongbin Na. You can see video on following website.
+This app was developed based on YouTube lecture series called 'Android Studio Registration Helper Application' produced by Dongbin Na. You can see video on following website.<br>
 https://www.youtube.com/watch?v=gd49JeLYvUI&index=28&list=PLRx0vPvlEmdD862e43ADbvDeGPUZKDuqL
 </p>
 
@@ -40,10 +40,10 @@ Gooplay Store에서 '생활정치' 또는 PoliticoReview 검색
 
 <h2>기능</h2>
 <p>
-국회의원(지역구/비례대표) 검색 및 투표기능 
-자신이 투표한 의원 확인 
-특정 의원의 득표 수 확인
-전체, 성별, 연령대별 득표 순위 확인 
+국회의원(지역구/비례대표) 검색 및 투표기능<br> 
+자신이 투표한 의원 확인<br> 
+특정 의원의 득표 수 확인<br>
+전체, 성별, 연령대별 득표 순위 확인<br> 
 </p>
 
 <h2>Note</h2>
@@ -51,6 +51,6 @@ Gooplay Store에서 '생활정치' 또는 PoliticoReview 검색
 
 <h2>감사의 말씀 </h2> 
 <p>
-이 앱은 유투브 동영상 안드로이드 스튜디오 수강신청 도우미 프로젝트를 기반으로 만들어졌습니다. 아래의 웹 사이트에서 동영상을 확인할 수 있습니다. 
+이 앱은 유투브 동영상 안드로이드 스튜디오 수강신청 도우미 프로젝트를 기반으로 만들어졌습니다. 아래의 웹 사이트에서 동영상을 확인할 수 있습니다.<br>
 https://www.youtube.com/watch?v=gd49JeLYvUI&index=28&list=PLRx0vPvlEmdD862e43ADbvDeGPUZKDuqL
 <p>
