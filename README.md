@@ -1,7 +1,8 @@
 <h1>PoliticoReview<h1>
-<h2>Politico Review has not been updated since May 2018</h2>
 <p>PoliticoReview aims at south korean legislator's popularity survey.</p>
   
+<h2>Politico Review has not been updated since May 2018</h2>
+
 <h2>Tech Stack</h2>
 <p>PoliticoReview was developed using Android Studio(Java), php, phpMyAdmin.
 <p>No specific web framework was used.</p>
@@ -26,8 +27,8 @@ https://www.youtube.com/watch?v=gd49JeLYvUI&index=28&list=PLRx0vPvlEmdD862e43ADb
 </p>
 
 <h1>PoliticoReview<h1>
-<h2>Politico Review는 2018년 5월을 끝으로 더 이상 유지보수 하지 않습니다.</h2>
 <p>Politico Review는 현직 국회의원의 인기도 조사를 위한 모바일애플리케이션 입니다.</p>
+<h2>Politico Review는 2018년 5월을 끝으로 더 이상 유지보수 하지 않습니다.</h2>
   
 <h2>Tech Stack</h2>
 <p>PoliticoReview는 Android Studio(Java), php, phpMyAdmin을 이용하여 개발되었습니다.</p>
