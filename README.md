@@ -10,6 +10,7 @@
 
 <h2>How to Download Android Application</h2> 
 <p>In Gooplay Store, search '생활정치' or PoliticoReview.</p>
+<p>https://play.google.com/store/apps/details?id=kr.co.company.politicoreview1&hl=ko</p>
 
 <h2>Functions</h2>
 <p>Search south korean legislators(Regional/Proportional Representatives) and vote<br>
