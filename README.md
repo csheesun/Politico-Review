@@ -1,18 +1,22 @@
 <h1>PoliticoReview</h1>
-<p>PoliticoReview aims at south korean legislator's popularity survey.</p>
-  
-<h2>Politico Review has not been updated since May 2018</h2>
+Last Update: 2018/05/01
 
-<h2>Tech Stack</h2>
+<p>PoliticoReview aims at south korean legislator's popularity survey.</p>
+<p>Politico Review is not updated since May 2018</p>
+
+<h2>Download</h2> 
+<p>https://play.google.com/store/apps/details?id=kr.co.company.politicoreview1&hl=ko</p>
+<p>In Gooplay Store, search '생활정치' or PoliticoReview.</p>
+  
+<h2>PoliticoReview was developed using </h2>
 <p>PoliticoReview was developed using Android Studio(Java), php, phpMyAdmin.
 <p>No specific web framework was used.</p>
 </p>
 
-<h2>How to Download Android Application</h2> 
-<p>https://play.google.com/store/apps/details?id=kr.co.company.politicoreview1&hl=ko</p>
-<p>In Gooplay Store, search '생활정치' or PoliticoReview.</p>
+<h2> Django board was developed by </h2>
+heesunlee9 in January 2018.
 
-<h2>Functions</h2>
+<h2>Features</h2>
 <p>Search south korean legislators(Regional/Proportional Representatives) and vote<br>
 See legislators a user voted for<br>
 See the number of votes a legislator obtained<br>
